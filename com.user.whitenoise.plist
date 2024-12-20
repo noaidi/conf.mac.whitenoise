@@ -7,14 +7,9 @@
 	<key>ProgramArguments</key>
 	<array>
 		<string>afplay</string>
-		<string>/User/noaidi/.conf.mac.whitenoise/20khz-sine.m4a</string>
+		<string>{pwd}/20khz-sine.m4a</string>
 	</array>
 	<key>StartInterval</key>
 	<integer>30</integer>
 </dict>
 </plist>
-
-<!--
-cp com.user.whitenoise.plist ~/Library/LaunchAgents/
-launchctl load ~/Library/LaunchAgents/com.user.whitenoise.plist
--->
