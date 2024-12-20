@@ -1,5 +1,7 @@
 #!/bin/sh
 
+label="com.user.whitenoise"
+
 # get current path
 path=$(pwd)
 
@@ -10,7 +12,7 @@ IFS=
 cat com.user.whitenoise.plist | while read -r line
 do
 	echo $line | sed "s|{pwd}|$path|g"
-done > ~/Library/LaunchAgents/com.user.whitenoise.plist
+done > ~/Library/LaunchAgents/$label.plist
 
-launchctl unload ~/Library/LaunchAgents/com.user.whitenoise.plist
-launchctl load ~/Library/LaunchAgents/com.user.whitenoise.plist
+launchctl list $label 1>/dev/null 2>&1 && launchctl unload ~/Library/LaunchAgents/$label.plist
+launchctl load ~/Library/LaunchAgents/$label.plist
